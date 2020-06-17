@@ -1,4 +1,4 @@
-#version 420 core
+#version 440 core
 out vec4 colour;
 
 in vec2 TexCoord0;
@@ -33,25 +33,25 @@ layout(binding=3) uniform sampler2D u_NormalMap;
 
 #ifdef LOW_SCENE
 	uniform PointLight u_pointLights[1];
-	const unsigned int NUM_POINT_LIGHT = 1;
-	const unsigned int NUM_DIRECTIONAL_LIGHT = 0;
+	const uint NUM_POINT_LIGHT = 1;
+	const uint NUM_DIRECTIONAL_LIGHT = 0;
 
 #elif defined(MEDIUM_SCENE)
 	uniform PointLight u_pointLights[2];
 	//uniform DirectionalLight u_directionalLights[1];
-	const unsigned int NUM_POINT_LIGHT = 2;
-	const unsigned int NUM_DIRECTIONAL_LIGHT = 0;
+	const uint NUM_POINT_LIGHT = 2;
+	const uint NUM_DIRECTIONAL_LIGHT = 0;
 
 #elif defined(HIGH_SCENE)
 	uniform PointLight u_pointLights[3];
 	uniform DirectionalLight u_directionalLights[1];
-	const unsigned int NUM_POINT_LIGHT = 3;
-	const unsigned int NUM_DIRECTIONAL_LIGHT = 1;
+	const uint NUM_POINT_LIGHT = 3;
+	const uint NUM_DIRECTIONAL_LIGHT = 1;
 
 #else
 	uniform PointLight u_pointLights[1];
-	const unsigned int NUM_POINT_LIGHT = 1;
-	const unsigned int NUM_DIRECTIONAL_LIGHT = 0;
+	const uint NUM_POINT_LIGHT = 1;
+	const uint NUM_DIRECTIONAL_LIGHT = 0;
 #endif	
 
   /*========================================================
