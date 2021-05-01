@@ -13,7 +13,7 @@ VULKAN_SDK = os.getenv("VULKAN_SDK")
 IncludeDir = {}
 IncludeDir["GLFW"] = "Dependencies/glfw/include"
 
-include "Dependencies/glfw"
+include "Dependencies.lua"
 
 project "DeepBlue"
     location "DeepBlue"
@@ -48,8 +48,7 @@ project "DeepBlue"
 
     libdirs
     {
-        "%{VULKAN_SDK}/Lib",
-        "Dependencies/GLFW_3.2.1/x64/lib"
+        "%{VULKAN_SDK}/Lib"
     }
 
     links

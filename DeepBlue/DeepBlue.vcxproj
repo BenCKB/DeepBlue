@@ -96,7 +96,7 @@ IF EXIST res\Textures\ (xcopy /Q /E /Y /I res\Textures ..\bin\Debug-x86_64\$(Pro
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>opengl32.lib;User32.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.2.154.1\Lib;..\Dependencies\GLFW_3.2.1\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.2.154.1\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/ENTRY:mainCRTStartup %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
@@ -207,7 +207,7 @@ IF EXIST res\Textures\ (xcopy /Q /E /Y /I res\Textures ..\bin\Release-x86_64\$(P
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dependencies\glfw\GLFW.vcxproj">
+    <ProjectReference Include="..\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>
   </ItemGroup>
