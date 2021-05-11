@@ -347,3 +347,10 @@ docs/
 !sphere.obj
 !helmet.obj
 !x64/
+
+#VS
+*.vcxproj
+*.filters
+
+#ImGui
+imgui.ini
