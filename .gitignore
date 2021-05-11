@@ -349,6 +349,7 @@ docs/
 !x64/
 
 #VS
+*.sln
 *.vcxproj
 *.filters
 
