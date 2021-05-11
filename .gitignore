@@ -347,6 +347,7 @@ docs/
 !sphere.obj
 !helmet.obj
 !x64/
+!Dependencies/premake/bin/
 
 #VS
 *.sln
