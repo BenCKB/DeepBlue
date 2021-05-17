@@ -12,6 +12,7 @@ VULKAN_SDK = os.getenv("VULKAN_SDK")
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Dependencies/glfw/include"
+IncludeDir["SPDLOG"] = "Dependencies/spdlog/include"
 
 include "Dependencies.lua"
 
@@ -33,7 +34,7 @@ project "DeepBlue"
 
     includedirs
     {
-        "Dependencies/spdlog/include",
+        "%{IncludeDir.SPDLOG}",
         "Dependencies/GLUT/include",
         "%{IncludeDir.GLFW}",
         "%{VULKAN_SDK}/Include"
@@ -47,6 +48,7 @@ project "DeepBlue"
     links
     {
         "opengl32.lib",
+        "SPDLOG",
         "GLFW",
         "User32.lib",
         "vulkan-1.lib"

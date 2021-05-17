@@ -72,3 +72,44 @@ project "GLFW"
 	filter "configurations:Release"
 		runtime "Release"
 		optimize "on"
+
+
+project "SPDLOG"
+	kind "StaticLib"
+	language "C"
+	staticruntime "off"
+
+	spdlogdir = "Dependencies/spdlog"
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("obj/" .. outputdir .. "/%{prj.name}")
+	
+	defines
+	{
+		"SPDLOG_COMPILED_LIB"
+	}
+
+	includedirs
+	{
+		"%{spdlogdir}/include"
+	}
+
+	files
+	{
+		"%{spdlogdir}/include/**.h"
+	}
+
+	files
+	{
+		"%{spdlogdir}/src/**.cpp"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		runtime "Release"
+		optimize "on"
