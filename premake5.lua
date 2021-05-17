@@ -19,13 +19,6 @@ project "DeepBlue"
     location "DeepBlue"
     language "C++"
 
-    filter "configurations:Debug"
-        kind "ConsoleApp"
-    
-
-    filter "configurations:Release"
-        kind "WindowedApp"
-    
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("obj/" .. outputdir .. "/%{prj.name}")
 
@@ -79,9 +72,11 @@ project "DeepBlue"
 
     filter "configurations:Debug"
         symbols "On"
-    
+        kind "ConsoleApp"
 
     filter "configurations:Release"
+        kind "WindowedApp"
         optimize "On"
         linkoptions "/ENTRY:mainCRTStartup"
+
     
